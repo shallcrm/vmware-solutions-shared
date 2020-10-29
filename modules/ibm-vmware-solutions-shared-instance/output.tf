@@ -6,14 +6,9 @@ output "edge_gateway_name" {
   value = data.vcd_edgegateway.edge.name
 }
 
-# output "default_gateway_network" {
-#   value = data.vcd_edgegateway.edge.default_gateway_network
-# }
-
 output "default_gateway_network" {
-  value = tolist(data.vcd_edgegateway.edge.external_network)[0].name
+  value = data.vcd_edgegateway.edge.default_gateway_network
 }
-
 
 output "external_network_name" {
   value = tolist(data.vcd_edgegateway.edge.external_network)[0].name
@@ -48,23 +43,14 @@ output "external_network_ips_2" {
   value = tolist(data.vcd_edgegateway.edge.external_network_ips)[1]
 }
 
-# output "external_networks" {
-#   value = tolist(data.vcd_edgegateway.edge.external_networks)
-# }
-
-# output "external_networks_1" {
-#   value = tolist(data.vcd_edgegateway.edge.external_networks)[0]
-# }
-
-output "external_networks_1" {
-  value = tolist(data.vcd_edgegateway.edge.external_network)[0].name
+output "external_networks" {
+  value = tolist(data.vcd_edgegateway.edge.external_networks)
 }
 
-
-# output "external_networks_2" {
-#   value = tolist(data.vcd_edgegateway.edge.external_networks)[1]
-# }
+output "external_networks_1" {
+  value = tolist(data.vcd_edgegateway.edge.external_networks)[0]
+}
 
 output "external_networks_2" {
-  value = tolist(data.vcd_edgegateway.edge.external_network)[1].name
+  value = tolist(data.vcd_edgegateway.edge.external_networks)[1]
 }

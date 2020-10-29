@@ -1,6 +1,5 @@
 # Configure the VMware vCloud Director Provider
 provider "vcd" {
-  version  = "=2.9.0"
   user     = var.vcd_user
   password = var.vcd_password
   org      = var.vcd_org

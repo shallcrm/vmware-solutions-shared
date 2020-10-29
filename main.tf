@@ -19,13 +19,13 @@ resource "vcd_network_routed" "tutorial_network" {
 
   name         = "Tutorial-Network"
   edge_gateway = module.ibm_vmware_solutions_shared_instance.edge_gateway_name
-  gateway      = "192.168.100.1"
+  gateway      = "192.168.200.1"
 
   interface_type = "distributed"
 
   static_ip_pool {
-    start_address = "192.168.100.5"
-    end_address   = "192.168.100.254"
+    start_address = "192.168.200.5"
+    end_address   = "192.168.200.254"
   }
 
   dns1 = "9.9.9.9"
@@ -149,8 +149,8 @@ resource "vcd_vapp_vm" "vm_1" {
   name          = "vm-centos8-01"
   catalog_name  = "Public Catalog"
   template_name = "CentOS-8-Template-Official"
-  memory        = 8192
-  cpus          = 2
+  memory        = 4096
+  cpus          = 1
 
   guest_properties = {
     "guest.hostname" = "vm-centos8-01"

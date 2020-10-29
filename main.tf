@@ -162,4 +162,11 @@ resource "vcd_vapp_vm" "vm_1" {
     ip_allocation_mode = "POOL"
     is_primary         = true
   }
+
+  customization {
+    force                      = true
+    auto_generate_password     = true
+    # Other customization options to override the ones from template
+  }
+
 }

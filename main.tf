@@ -164,7 +164,7 @@ resource "vcd_vapp_vm" "vm_1" {
   }
 
   customization {
-    force                      = true
+    force                      = true                 //  Change to false after first run
     auto_generate_password     = true
     # Other customization options to override the ones from template
   }

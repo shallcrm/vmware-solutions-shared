@@ -1,7 +1,3 @@
-# output "provider_vdc" {
-#   value = data.vcd_org_vdc.tutorials_od.name
-# }
-
 output "edge_gateway_name" {
   value = data.vcd_edgegateway.edge.name
 }
@@ -25,11 +21,6 @@ output "external_network_subnet_gateway" {
 output "suballocate_pool" {
   value = tolist(tolist(tolist(data.vcd_edgegateway.edge.external_network)[0].subnet)[0].suballocate_pool)
 } 
-
-# some times this line works and some other times it does not, need to figure out why as the state is always the same
-# output "start_address" {
-#   value = tolist(tolist(tolist(data.vcd_edgegateway.edge.external_network)[0].subnet)[0].suballocate_pool)[0].start_address
-# } 
 
 output "external_network_ips" {
   value = tolist(data.vcd_edgegateway.edge.external_network_ips)
